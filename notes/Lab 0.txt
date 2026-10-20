@@ -1,1 +1,11 @@
 the findById method looks at every player until it finds one that matches with the id given in the parameter
+
+only the findHighestScore method needs to look at every player since the others stop as soon as it finds the correct player
+
+i Think all the methods would become more expensive with a larger list findHighestScore would probably be the most expensive since the other two have a chance of finishing early
+
+you could probably use a Dictionary/Hash set instead to make it easier to find with ID.
+
+i added a test to make sure the ContainsName method was case sensitive because it was the first thing i thought of
+
+i made a commit when i implemented the two methods since that was the Point all the tests succeeded
