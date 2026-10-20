@@ -1,0 +1,1 @@
+the findById method looks at every player until it finds one that matches with the id given in the parameter
