@@ -29,6 +29,31 @@ namespace DSA.Lab01
                 throw new ArgumentNullException(nameof(sortedValues));
             }
 
+            int high = sortedValues.Length - 1;
+            int low = 0;
+
+            while (low <= high)
+            {
+
+
+                int middle = low+((high - low) / 2);
+               
+
+                if (sortedValues[middle] == target)
+                {
+                    return middle;
+                }
+                else if (sortedValues[middle] > target)
+                {
+                    high = middle - 1;
+                }
+                else if (sortedValues[middle] < target)
+                {
+                    low = middle + 1;
+                }
+                
+
+            }
 
 
             // TODO: Implement binary search.

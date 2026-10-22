@@ -1,0 +1,1 @@
+the Array needs to be sorted because otherwise you couldnt discard half of it when checking the middle cuz thered be a chance the target was in that half

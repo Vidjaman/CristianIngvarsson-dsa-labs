@@ -10,6 +10,19 @@ namespace DSA.Lab01
             {
                 throw new ArgumentNullException(nameof(values));
             }
+            for(int i=1;i<values.Length;i++)
+            {
+                int valueToInsert=values[i];
+                int j = i - 1;
+                while (j>=0&&j<values.Length-1&& values[j] > valueToInsert)
+                {
+                    values[j+1]=values[j];
+                    j--;
+                }
+                values[j + 1] = valueToInsert;
+
+            }
+            
             // TODO: Sort the array in ascending order using insertion sort.
             //
             // Think of values[0..i-1] as the already-sorted part.
@@ -18,5 +31,11 @@ namespace DSA.Lab01
             // 2. Shift larger values one position to the right.
             // 3. Put the stored value into the gap.
         }
+       
+        
+        
+
+
     }
+    
 }

@@ -75,6 +75,13 @@ namespace DSA.Lab01.Tests
 
             Assert.That(result, Is.EqualTo(-1));
         }
+        [Test]
+        public void BinarySearch_FindsWhenArrayHasLenghtOfOne()
+        {
+            int[] values = { 1 };
+            int result = SearchAlgorithms.BinarySearch(values, 1);
+            Assert.That(result, Is.EqualTo(0));
+        }
     }
 
     [TestFixture]
