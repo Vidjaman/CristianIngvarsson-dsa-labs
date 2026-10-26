@@ -35,6 +35,15 @@ namespace DSA.Lab01.Tests
 
             Assert.That(result, Is.EqualTo(-1));
         }
+        [Test]
+        public void LinearSearch_FindsWhenArrayOfOneLength()
+        {
+            int[] values = {0 };
+
+            int result = SearchAlgorithms.LinearSearch(values, 0);
+
+            Assert.That(result, Is.EqualTo(0));
+        }
 
         [Test]
         public void BinarySearch_ReturnsMatchingIndex()
@@ -64,6 +73,15 @@ namespace DSA.Lab01.Tests
             int result = SearchAlgorithms.BinarySearch(values, 16);
 
             Assert.That(result, Is.EqualTo(4));
+        }
+        [Test]
+        public void BinarySearch_FindsMiddleElement()
+        {
+            int[] values = { 2, 5, 8, 12, 16 };
+
+            int result = SearchAlgorithms.BinarySearch(values, 8);
+
+            Assert.That(result, Is.EqualTo(2));
         }
 
         [Test]
@@ -115,6 +133,16 @@ namespace DSA.Lab01.Tests
             SortAlgorithms.InsertionSort(values);
 
             Assert.That(values, Is.EqualTo(new[] { 1, 1, 2, 3, 3 }));
+        }
+       
+        [Test]
+        public void InsertionSort_HandlesReverseSortedArray()
+        {
+            int[] values = { 9, 8, 6, 5, 3 };
+
+            SortAlgorithms.InsertionSort(values);
+
+            Assert.That(values, Is.EqualTo(new[] { 3, 5, 6, 8, 9 }));
         }
 
         [Test]
