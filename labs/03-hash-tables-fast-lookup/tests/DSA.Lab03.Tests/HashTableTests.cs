@@ -42,6 +42,25 @@ namespace DSA.Lab03.Tests
             table.Set(1, "A");
             Assert.That(table.TryGetValue(99, out _), Is.False);
         }
+        [Test]
+        public void HashTable_ReplacingExistingDoesNotIncreaseCount()
+        {
+            var table = new IntHashTable<string>(5);
+            table.Set(0, "A");
+            table.Set(0, "B");
+
+            Assert.That(table.Count,Is.EqualTo(1));
+        }
+        [Test]
+        public void HashTable_MissingCollidingKeyReturnsFalse()
+        {
+            var table = new IntHashTable<string>(5);
+            table.Set(1, "A");
+            table.Set(6, "A");
+            table.Set(11, "A");
+            Assert.That(table.TryGetValue(16, out _), Is.False);
+        }
+       
 
         [Test]
         public void HashTable_ContainsKeyUsesStoredKeys()
