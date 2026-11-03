@@ -1,0 +1,13 @@
+Why can keys 1 and 6 both exist when the table has five buckets?
+Because the modulo ensures they all fit in one of the buckets
+1%5=1
+6%5=1
+
+What happens to lookup cost if almost every key ends up in the same bucket?
+it becomes the same as a linear search O(n)
+
+Why does expected O(1) lookup not mean "exactly one CPU operation"?
+because sometimes it has to do more than one CPU operation per cycle for instance in a hashmap it has to calculate the bucket index.
+
+Why must the original key still be stored even after we have calculated its bucket?
+To tell the diffrence between collisions
